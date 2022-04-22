@@ -9,7 +9,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{18E69904-7BB7-70FB-CA97-0185C0817080}</ProjectGuid>
+    <ProjectGuid>{C0B66640-AF7F-959F-6FEF-059FDC2042D0}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -58,8 +58,9 @@
     <Compile Include="Assets\TokenDeployAndSendCoroutinesUnityWebRequest.cs" />
     <Compile Include="Assets\GetLatestBlockVanillaNethereum.cs" />
     <Compile Include="Assets\ChangeTextInWebGL.cs" />
-    <Compile Include="Assets\DisableInWebGL.cs" />
     <Compile Include="Assets\GanacheTest.cs" />
+    <Compile Include="Assets\DisableInWebGL.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\link.xml" />
