@@ -3857,13 +3857,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1407581882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5bd463c77f93c934da1210071b42c42d, type: 3}
+  m_Script: {fileID: 11500000, guid: cbef30c84032ada4e8a976fac6092b8e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   id: 0
-  name: Espada de hierro
-  description: Una espada de hierro comun
-  dmg: 10
+  iname: Espada de Piedra
+  description: 'Una espada de piedra '
+  dmg: 5
 --- !u!4 &1407581884
 Transform:
   m_ObjectHideFlags: 0

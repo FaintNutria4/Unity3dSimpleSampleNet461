@@ -53,14 +53,18 @@
     <UnityVersion>2020.3.17f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\Sword.cs" />
     <Compile Include="Assets\GetLatestBlockCoroutine.cs" />
     <Compile Include="Assets\EtherTransferCoroutinesUnityWebRequest.cs" />
     <Compile Include="Assets\TokenDeployAndSendCoroutinesUnityWebRequest.cs" />
     <Compile Include="Assets\GetLatestBlockVanillaNethereum.cs" />
+    <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\User.cs" />
     <Compile Include="Assets\ChangeTextInWebGL.cs" />
     <Compile Include="Assets\GanacheTest.cs" />
     <Compile Include="Assets\DisableInWebGL.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\HealthSystem\ICanTakeDmg.cs" />
+    <Compile Include="Assets\Scripts\HealthSystem\HealthSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\link.xml" />
