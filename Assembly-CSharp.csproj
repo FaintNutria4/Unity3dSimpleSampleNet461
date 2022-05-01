@@ -65,6 +65,7 @@
     <Compile Include="Assets\Scripts\Nethereum\GanacheTest.cs" />
     <Compile Include="Assets\Scripts\Nethereum\DisableInWebGL.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\PlayerHealthSystem.cs" />
+    <Compile Include="Assets\Scripts\HealthSystem\EnemyHealthSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\link.xml" />
