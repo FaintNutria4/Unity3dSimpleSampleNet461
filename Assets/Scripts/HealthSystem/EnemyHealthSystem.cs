@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class EnemyHealthSystem : MonoBehaviour, ICanTakeDmg
 {
+
     private static float maxHp = 100f;
+    [SerializeField]
     private float hp = 100f;
 
     public float getCurrentHealth()
