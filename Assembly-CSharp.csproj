@@ -53,17 +53,17 @@
     <UnityVersion>2020.3.17f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Sword.cs" />
-    <Compile Include="Assets\GetLatestBlockCoroutine.cs" />
-    <Compile Include="Assets\EtherTransferCoroutinesUnityWebRequest.cs" />
-    <Compile Include="Assets\TokenDeployAndSendCoroutinesUnityWebRequest.cs" />
+    <Compile Include="Assets\Scripts\Items\Sword.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\GetLatestBlockCoroutine.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\EtherTransferCoroutinesUnityWebRequest.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\TokenDeployAndSendCoroutinesUnityWebRequest.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\ICanTakeDmg.cs" />
-    <Compile Include="Assets\GetLatestBlockVanillaNethereum.cs" />
-    <Compile Include="Assets\Scripts\Item.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\GetLatestBlockVanillaNethereum.cs" />
+    <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\Scripts\User.cs" />
-    <Compile Include="Assets\ChangeTextInWebGL.cs" />
-    <Compile Include="Assets\GanacheTest.cs" />
-    <Compile Include="Assets\DisableInWebGL.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\ChangeTextInWebGL.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\GanacheTest.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\DisableInWebGL.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\PlayerHealthSystem.cs" />
   </ItemGroup>
   <ItemGroup>
