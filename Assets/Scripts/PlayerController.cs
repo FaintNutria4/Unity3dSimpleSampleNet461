@@ -49,12 +49,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] LayerMask layerMask;
     [SerializeField] Transform gunPositioner;
     [SerializeField] Item currentItem;
-    [SerializeField] int maxImpactParticles = 25;
-    private int impactCounter;
-    private GameObject[] impactParticles;
 
-    //[Header("Animations")]
-    //[SerializeField] AnimController weaponAnim;
+
 
     private void Awake()
     {
@@ -139,11 +135,12 @@ public class PlayerController : MonoBehaviour
       private void Attack()
     {
         //weaponAnim.setShoot();
-        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out RaycastHit hitInfo, currentItem.distance));
+        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out RaycastHit hitInfo, currentItem.distance))
         {
             //ShootParticles();
-            Ray myRay = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
+            /*Ray myRay = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
             Debug.DrawRay(myRay.origin, myRay.direction, Color.red, 5);
+            */ 
 
             if (hitInfo.transform != null && hitInfo.transform.gameObject.TryGetComponent<ICanTakeDmg>(out ICanTakeDmg dmg))
             {
