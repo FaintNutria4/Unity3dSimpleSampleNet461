@@ -287,3 +287,7 @@ G:\JuanFran\Documents\Source\Repos\Unity3dSimpleSampleNet461\obj\Debug\Assembly-
 G:\JuanFran\Documents\Source\Repos\Unity3dSimpleSampleNet461\obj\Debug\Assembly-CSharp.dll
 G:\JuanFran\Documents\Source\Repos\Unity3dSimpleSampleNet461\obj\Debug\Assembly-CSharp.pdb
 C:\Users\juanf\Documents\source\repos\Unity3dSimpleSampleNet461\obj\Debug\Assembly-CSharp.csproj.AssemblyReference.cache
+D:\GitHub\NethereumRPG\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+D:\GitHub\NethereumRPG\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+D:\GitHub\NethereumRPG\obj\Debug\Assembly-CSharp.dll
+D:\GitHub\NethereumRPG\obj\Debug\Assembly-CSharp.pdb

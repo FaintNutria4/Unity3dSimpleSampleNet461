@@ -8,6 +8,8 @@ public abstract class Item : MonoBehaviour
     public int id;
     public string iname;
     public string description;
+    public int damage;
+    public int distance;
     
 
     

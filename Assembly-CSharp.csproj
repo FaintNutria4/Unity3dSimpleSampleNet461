@@ -60,12 +60,13 @@
     <Compile Include="Assets\Scripts\HealthSystem\ICanTakeDmg.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GetLatestBlockVanillaNethereum.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
+    <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\User.cs" />
+    <Compile Include="Assets\Scripts\HealthSystem\PlayerHealthSystem.cs" />
     <Compile Include="Assets\Scripts\Nethereum\ChangeTextInWebGL.cs" />
+    <Compile Include="Assets\Scripts\HealthSystem\EnemyHealthSystem.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GanacheTest.cs" />
     <Compile Include="Assets\Scripts\Nethereum\DisableInWebGL.cs" />
-    <Compile Include="Assets\Scripts\HealthSystem\PlayerHealthSystem.cs" />
-    <Compile Include="Assets\Scripts\HealthSystem\EnemyHealthSystem.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\link.xml" />

@@ -21,6 +21,8 @@ public class EnemyHealthSystem : MonoBehaviour, ICanTakeDmg
 
     public void TakeDmg(float dmg)
     {
+
         hp -= dmg;
+        Debug.Log("Current Health: " + hp);
     }
 }

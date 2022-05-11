@@ -4,11 +4,12 @@ using UnityEngine;
 
 public class Sword :Item
 {
-    public int dmg; 
+   
 
-    public Sword(int id, string name, string description, int dmg) : base(id, name, description)
+    public Sword(int id, string name, string description, int damage, int distance) : base(id, name, description)
     {
-        this.dmg = dmg;
+        this.damage = damage;
+        this.distance = distance;
     }
 
     public override void Use()
