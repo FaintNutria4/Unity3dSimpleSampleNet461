@@ -63,6 +63,7 @@
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\Scripts\User.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\PlayerHealthSystem.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\ContractDefinition\FunctionCallerDefinition.cs" />
     <Compile Include="Assets\Scripts\Nethereum\ChangeTextInWebGL.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\EnemyHealthSystem.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GanacheTest.cs" />
