@@ -68,9 +68,35 @@
     <Compile Include="Assets\Scripts\HealthSystem\EnemyHealthSystem.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GanacheTest.cs" />
     <Compile Include="Assets\Scripts\Nethereum\DisableInWebGL.cs" />
+    <Compile Include="Assets\QuickSave\Core\Settings\Cryptography.cs" />
+    <Compile Include="Assets\QuickSave\Core\Converters\QuaternionConverter.cs" />
+    <Compile Include="Assets\QuickSave\Core\Converters\Texture2DConverter.cs" />
+    <Compile Include="Assets\QuickSave\QuickSaveBase.cs" />
+    <Compile Include="Assets\QuickSave\Core\Converters\Matrix4x4Converter.cs" />
+    <Compile Include="Assets\QuickSave\Core\Converters\Vector3Converter.cs" />
+    <Compile Include="Assets\QuickSave\QuickSaveException.cs" />
+    <Compile Include="Assets\QuickSave\QuickSaveReader.cs" />
+    <Compile Include="Assets\QuickSave\Core\Converters\SpriteConverter.cs" />
+    <Compile Include="Assets\QuickSave\Core\Converters\Vector2Converter.cs" />
+    <Compile Include="Assets\QuickSave\Core\Settings\Compression.cs" />
+    <Compile Include="Assets\QuickSave\QuickSaveWriter.cs" />
+    <Compile Include="Assets\QuickSave\Core\Serialisers\JsonSerialiser.cs" />
+    <Compile Include="Assets\QuickSave\QuickSaveGlobalSettings.cs" />
+    <Compile Include="Assets\QuickSave\SecurityMode.cs" />
+    <Compile Include="Assets\QuickSave\CompressionMode.cs" />
+    <Compile Include="Assets\QuickSave\Core\Storage\FileAccess.cs" />
+    <Compile Include="Assets\QuickSave\Core\Converters\ColorConverter.cs" />
+    <Compile Include="Assets\QuickSave\QuickSaveRaw.cs" />
+    <Compile Include="Assets\QuickSave\Core\Converters\Vector4Converter.cs" />
+    <Compile Include="Assets\QuickSave\QuickSaveSettings.cs" />
+    <Compile Include="Assets\QuickSave\Example\ExampleSceneManagerController.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\link.xml" />
+    <None Include="Assets\QuickSave\Plugins\jillejr.newtonsoft.json-for-unity@12.0.301\Plugins\Newtonsoft.Json Portable\Newtonsoft.Json.xml" />
+    <None Include="Assets\QuickSave\Plugins\jillejr.newtonsoft.json-for-unity@12.0.301\Plugins\Newtonsoft.Json AOT\Newtonsoft.Json.xml" />
+    <None Include="Assets\QuickSave\Plugins\jillejr.newtonsoft.json-for-unity@12.0.301\Plugins\Newtonsoft.Json Editor\Newtonsoft.Json.xml" />
+    <None Include="Assets\QuickSave\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
