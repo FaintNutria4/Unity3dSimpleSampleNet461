@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using Nethereum.Hex;
 using Nethereum.Web3;
+using Nethereum.JsonRpc.UnityClient;
+using ItemStorage.ContractDefinition;
+using System.Numerics;
 
 public class GanacheTest : MonoBehaviour
 {
     //Contract ABI and address
-    string abi = @"[{ ""inputs"": [{""internalType"": ""address"",""name"": ""a"",""type"": ""address"" } ], ""name"": ""callName"", ""outputs"": [ {""internalType"": ""string"",""name"": """",""type"": ""string""}], ""stateMutability"": ""view"",""type"": ""function"",""constant"": true}]";
-    string address = "0xAeC0bc74eE8fe5488265dAB0133A70254e843c97";
+    string itemStorageAddress = "0x6Fd43Ba253cd4186f7795d0f9f67e2179d551a55";
 
     //Ganache TestNet url
     string netUrl = "http://localhost:7545";
 
     //Test Account Keys
-    string publicKey = "0x6A7dda1Eb87811Ea9b30451f6BdeF8c7Cb82b61A";
-    string privateKey = "0x1b696901dee9f47faf72d34b100da43d523ae9911d203d6d2b8b94fd3eb158a2";
+    string publicKey = "0x5b68b0e1c7aD8f688a778E91959dB689F2b6061c";
+    string privateKey = "8432f73c342088ccbb58eaa955b35609557e24eebfafd70f65dd6483b2f02a08";
 
        
-    Web3 myWeb; 
+    Web3 myWeb;
+    Coroutine co;
     
     // Start is called before the first frame update
     void Start()
@@ -26,8 +29,9 @@ public class GanacheTest : MonoBehaviour
         myWeb = new Web3(netUrl);
 
 
-        GetContract();
+        co = StartCoroutine(GetItem());
         
+
     }
 
     // Update is called once per frame
@@ -45,15 +49,31 @@ public class GanacheTest : MonoBehaviour
         Debug.Log("Your balance is " + balance);
     }
 
-    async void GetContract()
+    public IEnumerator GetContract()
     {
-        var contract = myWeb.Eth.GetContract(abi, address);
-        var callNameFunction = contract.GetFunction("callName");
+        //Query request using our acccount and the contracts address (no parameters needed and default values)
+        var queryRequest = new QueryUnityRequest<GetBalancesFunction, GetBalancesOutputDTO>(netUrl, publicKey);
+        yield return queryRequest.Query(new GetBalancesFunction() { }, itemStorageAddress);
 
-        var itemStorageAddress = "0x5d5BeA6d4756e62537737d3CD194F2F5B9460A73";
+        //Getting the dto response already decoded
+        var dtoResult = queryRequest.Result;
+        List<BigInteger> balances = dtoResult.ReturnValue1;
 
-        var itemName = await callNameFunction.CallAsync<string>(itemStorageAddress);
+       
+    }
 
-        Debug.Log(itemName);
+    public IEnumerator GetItem()
+    {
+        var queryRequest = new QueryUnityRequest<GetItemStatsFunction, GetItemStatsOutputDTO>(netUrl, publicKey);
+        yield return queryRequest.Query(new GetItemStatsFunction() { }, itemStorageAddress);
+
+        var result = queryRequest.Result;
+        ItemStorage.ContractDefinition.Item item = result.ReturnValue1;
+
+        
+        Debug.Log(item.IdType);
+        Debug.Log(item.Name);
+        Debug.Log(item.Description);
+        Debug.Log(item.Damage);
     }
 }
