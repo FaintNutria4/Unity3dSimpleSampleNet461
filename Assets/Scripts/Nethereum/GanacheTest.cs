@@ -19,17 +19,22 @@ public class GanacheTest : MonoBehaviour
     string publicKey = "0x5b68b0e1c7aD8f688a778E91959dB689F2b6061c";
     string privateKey = "8432f73c342088ccbb58eaa955b35609557e24eebfafd70f65dd6483b2f02a08";
 
-       
-    Web3 myWeb;
+
+    public GameObject sword;
+    public Transform itemHolder;
+    public User user;
+    public PlayerController pc;
+
     Coroutine co;
     
     // Start is called before the first frame update
     void Start()
     {
-        myWeb = new Web3(netUrl);
+        
 
+        co = StartCoroutine(GetItemCoroutine());
 
-        co = StartCoroutine(GetItem());
+        GetItem();
         
 
     }
@@ -40,13 +45,32 @@ public class GanacheTest : MonoBehaviour
         
     }
 
-
-    async void GetBanlance()
+    public void GetItem()
     {
-        var balance = await myWeb.Eth.GetBalance.SendRequestAsync("0xd814Ca7a5020f457474273edf6ccEA9dEB3afADE");
-        
+        StartCoroutine(GetItemToUser());
+    }
 
-        Debug.Log("Your balance is " + balance);
+    public IEnumerator GetItemToUser()
+    {
+        var queryRequest = new QueryUnityRequest<GetItemStatsFunction, GetItemStatsOutputDTO>(netUrl, publicKey);
+        yield return queryRequest.Query(new GetItemStatsFunction() { }, itemStorageAddress);
+
+        var result = queryRequest.Result;
+        ItemStorage.ContractDefinition.Item item = result.ReturnValue1;
+
+        //Check item id
+
+        Instantiate(sword, itemHolder);
+        Sword mySword = sword.GetComponent<Sword>();
+
+        mySword.iname = item.Name;
+        mySword.description = item.Description;
+        mySword.damage = (int)item.Damage;
+        mySword.id = (int)item.IdType;
+
+        user.inventory[0] = mySword;
+        pc.currentItem = mySword;
+       
     }
 
     public IEnumerator GetContract()
@@ -62,7 +86,7 @@ public class GanacheTest : MonoBehaviour
        
     }
 
-    public IEnumerator GetItem()
+    public IEnumerator GetItemCoroutine()
     {
         var queryRequest = new QueryUnityRequest<GetItemStatsFunction, GetItemStatsOutputDTO>(netUrl, publicKey);
         yield return queryRequest.Query(new GetItemStatsFunction() { }, itemStorageAddress);
@@ -70,10 +94,5 @@ public class GanacheTest : MonoBehaviour
         var result = queryRequest.Result;
         ItemStorage.ContractDefinition.Item item = result.ReturnValue1;
 
-        
-        Debug.Log(item.IdType);
-        Debug.Log(item.Name);
-        Debug.Log(item.Description);
-        Debug.Log(item.Damage);
     }
 }

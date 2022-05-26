@@ -68,6 +68,7 @@
     <Compile Include="Assets\QuickSave\QuickSaveGlobalSettings.cs" />
     <Compile Include="Assets\QuickSave\QuickSaveException.cs" />
     <Compile Include="Assets\QuickSave\Core\Converters\QuaternionConverter.cs" />
+    <Compile Include="Assets\Scripts\DotNetIPFS\Program.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GetLatestBlockVanillaNethereum.cs" />
     <Compile Include="Assets\QuickSave\Core\Storage\FileAccess.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />

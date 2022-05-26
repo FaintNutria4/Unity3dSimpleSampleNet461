@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] LayerMask layerMask;
     [SerializeField] Transform gunPositioner;
-    [SerializeField] Item currentItem;
+    [SerializeField] public Item currentItem;
 
 
 
