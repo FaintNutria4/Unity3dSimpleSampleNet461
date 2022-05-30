@@ -542,7 +542,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b37edbd8e1ce1ca40a6ecf2dfa50730e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sword: {fileID: 0}
+  sword: {fileID: 6508811228349356992, guid: 88cc14336eb40cd4b929597d95b58335, type: 3}
   itemHolder: {fileID: 824039638}
   user: {fileID: 8947026680927553380}
   pc: {fileID: 8947026680927553374}
@@ -5322,6 +5322,64 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1803276291}
   m_CullTransparentMesh: 0
+--- !u!1 &1809950609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1809950612}
+  - component: {fileID: 1809950611}
+  - component: {fileID: 1809950610}
+  m_Layer: 0
+  m_Name: IPFS
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1809950610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809950609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e401e2b0ddf034f489422ebe25138edc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  client: {fileID: 1809950611}
+--- !u!114 &1809950611
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809950609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56b7c7b5f6b109498844ebaf1f60675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  apiToken: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkaWQ6ZXRocjoweGM0YmNFMjk3NGQwMGE5QmRCQTE3MzU2YUYzMGZhQWU2YjkzMzk4RWEiLCJpc3MiOiJuZnQtc3RvcmFnZSIsImlhdCI6MTY1MzkxMzc3NzQ1MSwibmFtZSI6IlVuaXR5IEFQSSJ9.-ndosX2Uv7q6ue2NEehXglAZNTcISZfXDgADNrcxIow
+--- !u!4 &1809950612
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1809950609}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 832.045, y: 1.0688804, z: 372.785}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1825399569
 GameObject:
   m_ObjectHideFlags: 0
