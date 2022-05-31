@@ -90,7 +90,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7699855669971006491}
-  - component: {fileID: 3677624456438228694}
   m_Layer: 0
   m_Name: New_Sword_Red
   m_TagString: Untagged
@@ -113,20 +112,3 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -2.061, y: 81.427, z: 25.106}
---- !u!114 &3677624456438228694
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6508811228349356992}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cbef30c84032ada4e8a976fac6092b8e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  id: 1
-  iname: Espada Roja
-  description: Es una espada mumu wapa
-  damage: 10
-  distance: 5
