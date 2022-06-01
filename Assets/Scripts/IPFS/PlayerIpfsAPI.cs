@@ -3,12 +3,13 @@ using UnityEngine;
 using System.Collections;
 using UnityEngine.Networking;
 
-class LoadAssetBundle : MonoBehaviour
+public class PlayerIpfsAPI : MonoBehaviour
 {
-    public string BundleURL;
-    public string AssetName;
-    IEnumerator Start()
+
+    public IEnumerator LoadModel(string cid, Transform position, Action<GameObject> callback)
     {
+        string BundleURL = "https://" + cid + ".ipfs.dweb.link/";
+
         // Download the file from the URL. It will not be saved in the Cache
         using (UnityWebRequest www = UnityWebRequestAssetBundle.GetAssetBundle(BundleURL))
         {
@@ -19,9 +20,11 @@ class LoadAssetBundle : MonoBehaviour
             if (bundle != null)
             {
                 string rootAssetPath = bundle.GetAllAssetNames()[0];
-                GameObject arObject = Instantiate(bundle.LoadAsset(rootAssetPath) as GameObject, this.transform);
+                GameObject arObject = Instantiate(bundle.LoadAsset(rootAssetPath) as GameObject, position);
+                arObject.SetActive(false);
+
                 bundle.Unload(false);
-                //callback(arObject);
+                callback(arObject);
             }
             else
                 Debug.Log("Invalid AssetBundle");

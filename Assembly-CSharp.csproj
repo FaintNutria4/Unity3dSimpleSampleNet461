@@ -63,12 +63,14 @@
     <Compile Include="Assets\QuickSave\Core\Converters\SpriteConverter.cs" />
     <Compile Include="Assets\QuickSave\SecurityMode.cs" />
     <Compile Include="Assets\QuickSave\Core\Converters\Vector2Converter.cs" />
+    <Compile Include="Assets\Scripts\IPFS\PlayerIpfsAPI.cs" />
     <Compile Include="Assets\QuickSave\QuickSaveRaw.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\ICanTakeDmg.cs" />
     <Compile Include="Assets\QuickSave\QuickSaveGlobalSettings.cs" />
     <Compile Include="Assets\QuickSave\QuickSaveException.cs" />
     <Compile Include="Assets\QuickSave\Core\Converters\QuaternionConverter.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GetLatestBlockVanillaNethereum.cs" />
+    <Compile Include="Assets\Scripts\IPFS\NFTStorageImplementation.cs" />
     <Compile Include="Assets\QuickSave\Core\Storage\FileAccess.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
     <Compile Include="Assets\QuickSave\Core\Converters\Vector4Converter.cs" />
@@ -77,7 +79,9 @@
     <Compile Include="Assets\QuickSave\QuickSaveReader.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
     <Compile Include="Assets\QuickSave\Core\Converters\Texture2DConverter.cs" />
+    <Compile Include="Assets\Scripts\IPFS\NFTStorageClient.cs" />
     <Compile Include="Assets\QuickSave\Example\ExampleSceneManagerController.cs" />
+    <Compile Include="Assets\Scripts\GameManager.cs" />
     <Compile Include="Assets\QuickSave\Core\Converters\ColorConverter.cs" />
     <Compile Include="Assets\Scripts\User.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\PlayerHealthSystem.cs" />
@@ -87,13 +91,11 @@
     <Compile Include="Assets\Scripts\HealthSystem\EnemyHealthSystem.cs" />
     <Compile Include="Assets\QuickSave\Core\Converters\Matrix4x4Converter.cs" />
     <Compile Include="Assets\Scripts\Nethereum\ContractDefinition\ItemStorageDefinition.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\EthereumAPI.cs" />
     <Compile Include="Assets\QuickSave\Core\Settings\Compression.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GanacheTest.cs" />
     <Compile Include="Assets\QuickSave\CompressionMode.cs" />
     <Compile Include="Assets\Scripts\Nethereum\DisableInWebGL.cs" />
-    <Compile Include="Assets\Scripts\IPFS\NFTStorageClient.cs" />
-    <Compile Include="Assets\Scripts\IPFS\NFTStorageImplementation.cs" />
-    <Compile Include="Assets\Scripts\IPFS\LoadAssetBundle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\link.xml" />

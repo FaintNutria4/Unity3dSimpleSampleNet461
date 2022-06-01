@@ -1730,6 +1730,7 @@ GameObject:
   m_Component:
   - component: {fileID: 573434317}
   - component: {fileID: 573434316}
+  - component: {fileID: 573434318}
   m_Layer: 0
   m_Name: AssetBundleLoader
   m_TagString: Untagged
@@ -1749,8 +1750,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99af9f729e1504041b2870a98747a69c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  BundleURL: https://bafkreieu2gvgngp5fzvhc2nvkpl6b4r2ftrhe6al3lg5gm4o3fvf32mzla.ipfs.dweb.link/
-  AssetName: 
 --- !u!4 &573434317
 Transform:
   m_ObjectHideFlags: 0
@@ -1765,6 +1764,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &573434318
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 573434315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c431f480124e7e47a403c9d52822e04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &595461270
 GameObject:
   m_ObjectHideFlags: 0
@@ -6342,6 +6353,31 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8947026679877712102, guid: 457ee6fa0aeff7e49b598fd6db41adda,
+        type: 3}
+      propertyPath: ipfs
+      value: 
+      objectReference: {fileID: 573434316}
+    - target: {fileID: 8947026679877712102, guid: 457ee6fa0aeff7e49b598fd6db41adda,
+        type: 3}
+      propertyPath: ethereum
+      value: 
+      objectReference: {fileID: 573434318}
+    - target: {fileID: 8947026679877712102, guid: 457ee6fa0aeff7e49b598fd6db41adda,
+        type: 3}
+      propertyPath: publicKey
+      value: 0x5b68b0e1c7aD8f688a778E91959dB689F2b6061c
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947026679877712102, guid: 457ee6fa0aeff7e49b598fd6db41adda,
+        type: 3}
+      propertyPath: ItemHolder
+      value: 
+      objectReference: {fileID: 824039638}
+    - target: {fileID: 8947026679877712102, guid: 457ee6fa0aeff7e49b598fd6db41adda,
+        type: 3}
+      propertyPath: privateKey
+      value: 8432f73c342088ccbb58eaa955b35609557e24eebfafd70f65dd6483b2f02a08
+      objectReference: {fileID: 0}
     - target: {fileID: 8947026679877712103, guid: 457ee6fa0aeff7e49b598fd6db41adda,
         type: 3}
       propertyPath: m_Name
@@ -6350,7 +6386,7 @@ PrefabInstance:
     - target: {fileID: 8947026679877712103, guid: 457ee6fa0aeff7e49b598fd6db41adda,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 457ee6fa0aeff7e49b598fd6db41adda, type: 3}

@@ -8,7 +8,7 @@ using ItemStorage.ContractDefinition;
 using System.Numerics;
 using System;
 
-public class GanacheTest : MonoBehaviour
+public class EthereumAPI : MonoBehaviour
 {
     //Contract ABI and address
     string itemStorageAddress = "0x6Fd43Ba253cd4186f7795d0f9f67e2179d551a55";
@@ -19,54 +19,6 @@ public class GanacheTest : MonoBehaviour
     //Test Account Keys
     string publicKey = "0x5b68b0e1c7aD8f688a778E91959dB689F2b6061c";
     string privateKey = "8432f73c342088ccbb58eaa955b35609557e24eebfafd70f65dd6483b2f02a08";
-
-
-    public GameObject sword;
-    public Transform itemHolder;
-    public User user;
-    public PlayerController pc;
-
-    Coroutine co;
-    
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-
-       // co = StartCoroutine(GetItemStats());
-
-        GetItem();
-        
-
-    }
-
-    public void GetItem()
-    {
-        StartCoroutine(GetItemToUser());
-    }
-
-    public IEnumerator GetItemToUser()
-    {
-        var queryRequest = new QueryUnityRequest<GetItemStatsFunction, GetItemStatsOutputDTO>(netUrl, publicKey);
-        yield return queryRequest.Query(new GetItemStatsFunction() { }, itemStorageAddress);
-
-        var result = queryRequest.Result;
-        ItemStorage.ContractDefinition.Item item = result.ReturnValue1;
-
-        //Check item id
-
-        Instantiate(sword, itemHolder);
-        Sword mySword = sword.GetComponent<Sword>();
-
-        mySword.iname = item.Name;
-        mySword.description = item.Description;
-        mySword.damage = (int)item.Damage;
-        mySword.id = (int)item.IdType;
-
-        user.inventory[0] = mySword;
-        //pc.currentItem = mySword;
-       
-    }
 
     public IEnumerator GetBalances(Action<List<BigInteger>> callback)
     {
@@ -80,16 +32,18 @@ public class GanacheTest : MonoBehaviour
 
         callback(balances);
 
-       
+
     }
 
-    public IEnumerator GetItemStats(int ItemId)
+    public IEnumerator GetItemStats(BigInteger ItemId, Action<ItemStorage.ContractDefinition.Item> callback)
     {
         var queryRequest = new QueryUnityRequest<GetItemStatsFunction, GetItemStatsOutputDTO>(netUrl, publicKey);
-        yield return queryRequest.Query(new GetItemStatsFunction() { IdType = ItemId}, itemStorageAddress);
+        yield return queryRequest.Query(new GetItemStatsFunction() { IdType = ItemId }, itemStorageAddress);
 
         var result = queryRequest.Result;
         ItemStorage.ContractDefinition.Item item = result.ReturnValue1;
+
+        callback(item);
 
     }
 }

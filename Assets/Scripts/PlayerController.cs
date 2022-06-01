@@ -12,7 +12,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode m_DebugLockAngleKeyCode = KeyCode.I;
     public KeyCode m_DebugLockkeyCode = KeyCode.O;
 
-    [Header("Rotation")]
+   
     [SerializeField] User user;
 
     [Header("Rotation")]
@@ -48,7 +48,6 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] LayerMask layerMask;
     [SerializeField] Transform gunPositioner;
-    [SerializeField] public Item currentItem;
 
 
 
@@ -56,7 +55,7 @@ public class PlayerController : MonoBehaviour
     {
         mPitch = mPitchController.transform.rotation.eulerAngles.x;
         mYaw = transform.rotation.eulerAngles.y;
-        currentItem = user.inventory[0];
+       
     }
 
     private void Start()
@@ -135,7 +134,7 @@ public class PlayerController : MonoBehaviour
       private void Attack()
     {
         //weaponAnim.setShoot();
-        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out RaycastHit hitInfo, currentItem.distance))
+        if (Physics.Raycast(Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f)), out RaycastHit hitInfo, user.currentItem.distance))
         {
             //ShootParticles();
             /*Ray myRay = Camera.main.ViewportPointToRay(new Vector2(0.5f, 0.5f));
@@ -145,7 +144,7 @@ public class PlayerController : MonoBehaviour
             if (hitInfo.transform != null && hitInfo.transform.gameObject.TryGetComponent<ICanTakeDmg>(out ICanTakeDmg dmg))
             {
                 var distance = Vector3.Distance(transform.position, hitInfo.transform.position);
-                dmg.TakeDmg(currentItem.damage);
+                dmg.TakeDmg(user.currentItem.damage);
             }
 
         }
