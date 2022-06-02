@@ -21,12 +21,12 @@ public class EthereumAPI : MonoBehaviour
     [Header("Player Wallet")]
     //Test Account Keys
     public string publicKey = "0x99A556A0E54255e7A4FDE8046BE54394fB7dA17f";
-    public string privateKey = "e9c30eb71f4c1d096149c8e964fa0818f00ad49ac80a7e6b1c51f5f32b614c2c";
+    public string privateKey = "0xe9c30eb71f4c1d096149c8e964fa0818f00ad49ac80a7e6b1c51f5f32b614c2c";
 
     public IEnumerator GetBalances(Action<List<BigInteger>> callback)
     {
         //Query request using our acccount and the contracts address (no parameters needed and default values)
-        var queryRequest = new QueryUnityRequest<GetBalancesFunction, GetBalancesOutputDTO>(netUrl, publicKey);
+        var queryRequest = new QueryUnityRequest<GetBalancesFunction, GetBalancesOutputDTO>(netUrl, publicKey);        
         yield return queryRequest.Query(new GetBalancesFunction() { }, itemStorageAddress);
 
         //Getting the dto response already decoded
@@ -35,6 +35,21 @@ public class EthereumAPI : MonoBehaviour
 
         callback(balances);
 
+
+    }
+
+    public IEnumerator TransferItem(String newOwner, int idType, int amount)
+    {
+        var transactionTransferRequest = new TransactionSignedUnityRequest(netUrl, privateKey, 444444444500);
+        transactionTransferRequest.UseLegacyAsDefault = true;
+
+        var info = new TransferItemToAddressFunction() { NewOwner = newOwner, IdType = idType, Amount = amount };
+        
+        
+        yield return transactionTransferRequest.SignAndSendTransaction(info, itemStorageAddress); //ERROR
+
+        var transactionTransferHash = transactionTransferRequest.Result;
+        
 
     }
 

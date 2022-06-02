@@ -90,12 +90,12 @@
     <Compile Include="Assets\QuickSave\Core\Converters\Vector3Converter.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\EnemyHealthSystem.cs" />
     <Compile Include="Assets\QuickSave\Core\Converters\Matrix4x4Converter.cs" />
-    <Compile Include="Assets\Scripts\Nethereum\ContractDefinition\ItemStorageDefinition.cs" />
     <Compile Include="Assets\Scripts\Nethereum\EthereumAPI.cs" />
     <Compile Include="Assets\QuickSave\Core\Settings\Compression.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GanacheTest.cs" />
     <Compile Include="Assets\QuickSave\CompressionMode.cs" />
     <Compile Include="Assets\Scripts\Nethereum\DisableInWebGL.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\ContractDefinition\ItemStorageDefinition.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\link.xml" />

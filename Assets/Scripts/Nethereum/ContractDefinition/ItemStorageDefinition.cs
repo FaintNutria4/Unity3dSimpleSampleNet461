@@ -45,6 +45,19 @@ namespace ItemStorage.ContractDefinition
         public virtual string Cid { get; set; }
     }
 
+    public partial class TransferItemToAddressFunction : TransferItemToAddressFunctionBase { }
+
+    [Function("transferItemToAddress")]
+    public class TransferItemToAddressFunctionBase : FunctionMessage
+    {
+        [Parameter("address", "_newOwner", 1)]
+        public virtual string NewOwner { get; set; }
+        [Parameter("uint256", "_idType", 2)]
+        public virtual BigInteger IdType { get; set; }
+        [Parameter("uint256", "_amount", 3)]
+        public virtual BigInteger Amount { get; set; }
+    }
+
     public partial class AddItemToAddressFunction : AddItemToAddressFunctionBase { }
 
     [Function("addItemToAddress")]
@@ -83,6 +96,8 @@ namespace ItemStorage.ContractDefinition
         [Parameter("tuple", "", 1)]
         public virtual Item ReturnValue1 { get; set; }
     }
+
+
 
 
 

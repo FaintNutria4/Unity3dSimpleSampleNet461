@@ -35,6 +35,8 @@ public class User : MonoBehaviour
     public void Start()
     {
         StartCoroutine(DownLoadItems());
+
+        //StartCoroutine(ethereum.TransferItem("0xB8358aBD76c830611bF41ef88071dbC02e54B016", 0 , 1));
     }
 
      IEnumerator DownLoadItems()
