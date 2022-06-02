@@ -10,15 +10,18 @@ using System;
 
 public class EthereumAPI : MonoBehaviour
 {
-    //Contract ABI and address
-    string itemStorageAddress = "0x6Fd43Ba253cd4186f7795d0f9f67e2179d551a55";
-
+    [Header("Net")]
     //Ganache TestNet url
-    string netUrl = "http://localhost:7545";
+    public string netUrl = "http://localhost:7545";
 
+    [Header("Contract Address")]
+    //Contract ABI and address
+    public string itemStorageAddress = "0x7853b6F17E730d46EfD914878779715cd70f24eD";
+
+    [Header("Player Wallet")]
     //Test Account Keys
-    string publicKey = "0x5b68b0e1c7aD8f688a778E91959dB689F2b6061c";
-    string privateKey = "8432f73c342088ccbb58eaa955b35609557e24eebfafd70f65dd6483b2f02a08";
+    public string publicKey = "0x99A556A0E54255e7A4FDE8046BE54394fB7dA17f";
+    public string privateKey = "e9c30eb71f4c1d096149c8e964fa0818f00ad49ac80a7e6b1c51f5f32b614c2c";
 
     public IEnumerator GetBalances(Action<List<BigInteger>> callback)
     {
@@ -39,7 +42,7 @@ public class EthereumAPI : MonoBehaviour
     {
         var queryRequest = new QueryUnityRequest<GetItemStatsFunction, GetItemStatsOutputDTO>(netUrl, publicKey);
         yield return queryRequest.Query(new GetItemStatsFunction() { IdType = ItemId }, itemStorageAddress);
-
+        
         var result = queryRequest.Result;
         ItemStorage.ContractDefinition.Item item = result.ReturnValue1;
 

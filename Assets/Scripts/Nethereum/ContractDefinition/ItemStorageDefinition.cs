@@ -41,6 +41,8 @@ namespace ItemStorage.ContractDefinition
         public virtual string Description { get; set; }
         [Parameter("uint256", "_damage", 4)]
         public virtual BigInteger Damage { get; set; }
+        [Parameter("string", "_cid", 5)]
+        public virtual string Cid { get; set; }
     }
 
     public partial class AddItemToAddressFunction : AddItemToAddressFunctionBase { }

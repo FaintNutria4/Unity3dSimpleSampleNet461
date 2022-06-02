@@ -40,19 +40,20 @@ public class User : MonoBehaviour
      IEnumerator DownLoadItems()
     {
         balances = null;
-        
-        yield return StartCoroutine(ethereum.GetBalances(setBalances));
-
+        StartCoroutine(ethereum.GetBalances(setBalances));
+        yield return new WaitUntil(() => balances != null);
+        if (balances.Count == 0 ) Debug.Log("User has no Items");
         int o = 0;
         foreach(BigInteger i in balances)
         {
+            if (i == 0) continue;
             item = null;
             auxItem = null;
             auxGameObject = null;
 
-            StartCoroutine(ethereum.GetItemStats(i, setAuxItem));
+            StartCoroutine(ethereum.GetItemStats(o, setAuxItem));
             yield return new WaitUntil(() => item != null);
-            StartCoroutine(ipfs.LoadModel("bafkreieu2gvgngp5fzvhc2nvkpl6b4r2ftrhe6al3lg5gm4o3fvf32mzla", ItemHolder, setAuxGameObjectAddItemScript));
+            StartCoroutine(ipfs.LoadModel(item.Cid, ItemHolder, setAuxGameObjectAddItemScript));
             yield return new WaitUntil(() => auxGameObject != null);
             inventory[o] = auxItem;
             o++;
