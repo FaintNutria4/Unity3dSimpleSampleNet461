@@ -6,11 +6,6 @@ using UnityEngine;
 
 public class User : MonoBehaviour
 {
-    [Header("User Info")]
-    
-    public string publicKey;
-    public string privateKey;
-
     [Header("IPFS API")]
 
     public PlayerIpfsAPI ipfs;
@@ -34,9 +29,20 @@ public class User : MonoBehaviour
 
     public void Start()
     {
-        StartCoroutine(DownLoadItems());
+       
 
-        //StartCoroutine(ethereum.TransferItem("0xB8358aBD76c830611bF41ef88071dbC02e54B016", 0 , 1));
+        StartCoroutine(ethereum.TransferItem("0xB8358aBD76c830611bF41ef88071dbC02e54B016", 0 , 1));
+    }
+
+    public void SetWallet(string publicKey, string privateKey)
+    {
+        ethereum.publicKey = publicKey;
+        ethereum.privateKey = privateKey;
+    }
+
+    public void LoadItems()
+    {
+        StartCoroutine(DownLoadItems());
     }
 
      IEnumerator DownLoadItems()

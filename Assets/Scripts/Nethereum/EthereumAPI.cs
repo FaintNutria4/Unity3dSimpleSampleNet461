@@ -40,13 +40,13 @@ public class EthereumAPI : MonoBehaviour
 
     public IEnumerator TransferItem(String newOwner, int idType, int amount)
     {
-        var transactionTransferRequest = new TransactionSignedUnityRequest(netUrl, privateKey, 444444444500);
+        var transactionTransferRequest = new TransactionSignedUnityRequest(netUrl, privateKey);
         transactionTransferRequest.UseLegacyAsDefault = true;
 
         var info = new TransferItemToAddressFunction() { NewOwner = newOwner, IdType = idType, Amount = amount };
         
         
-        yield return transactionTransferRequest.SignAndSendTransaction(info, itemStorageAddress); //ERROR
+        yield return transactionTransferRequest.SignAndSendTransaction(info, itemStorageAddress);
 
         var transactionTransferHash = transactionTransferRequest.Result;
         

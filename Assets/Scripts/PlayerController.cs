@@ -12,6 +12,7 @@ public class PlayerController : MonoBehaviour
     public KeyCode m_DebugLockAngleKeyCode = KeyCode.I;
     public KeyCode m_DebugLockkeyCode = KeyCode.O;
 
+    private GameManager gameManager;
    
     [SerializeField] User user;
 
@@ -61,24 +62,32 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         //weaponAnim.setIdle();
-        
+        gameManager = GameManager.gameManager;
     }
 
     private void Update()
     {
-        float mouseAxisX = Input.GetAxis("Mouse X");
-        float mouseAxisY = Input.GetAxis("Mouse Y");
-
         CheckLockCursor();
 
-        Rotate(mouseAxisX, mouseAxisY);
-
-        Move();
-
-        if (Input.GetMouseButtonDown(0))
+        if (gameManager.gameState == GameManager.GameState.Playing)
         {
-            Attack();
+            if (Input.GetKey(KeyCode.Escape)) gameManager.setState(GameManager.GameState.MainMenu);
+
+            float mouseAxisX = Input.GetAxis("Mouse X");
+            float mouseAxisY = Input.GetAxis("Mouse Y");
+
+            
+
+            Rotate(mouseAxisX, mouseAxisY);
+
+            Move();
+
+            if (Input.GetMouseButtonDown(0))
+            {
+                Attack();
+            }
         }
+        
     }
 
     private void Rotate(float mouseAxisX, float mouseAxisY)

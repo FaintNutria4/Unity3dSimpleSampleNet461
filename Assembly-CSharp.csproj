@@ -65,6 +65,7 @@
     <Compile Include="Assets\QuickSave\Core\Converters\Vector2Converter.cs" />
     <Compile Include="Assets\Scripts\IPFS\PlayerIpfsAPI.cs" />
     <Compile Include="Assets\QuickSave\QuickSaveRaw.cs" />
+    <Compile Include="Assets\Scripts\Nethereum\ContractDefinition\ItemStorageDefinition.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\ICanTakeDmg.cs" />
     <Compile Include="Assets\QuickSave\QuickSaveGlobalSettings.cs" />
     <Compile Include="Assets\QuickSave\QuickSaveException.cs" />
@@ -95,7 +96,7 @@
     <Compile Include="Assets\Scripts\Nethereum\GanacheTest.cs" />
     <Compile Include="Assets\QuickSave\CompressionMode.cs" />
     <Compile Include="Assets\Scripts\Nethereum\DisableInWebGL.cs" />
-    <Compile Include="Assets\Scripts\Nethereum\ContractDefinition\ItemStorageDefinition.cs" />
+    <Compile Include="Assets\Scripts\MainMenuHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\link.xml" />
