@@ -10,6 +10,8 @@ public class GameManager : MonoBehaviour
     public GameObject mainMenu;
     public GameObject shopMenu;
 
+    public GameObject player;
+
     
 
     public enum GameState { MainMenu, Playing, ShopMenu };
@@ -44,6 +46,7 @@ public class GameManager : MonoBehaviour
                 Time.timeScale = 0;
                 shopMenu.SetActive(true);
                 shopMenu.transform.parent.gameObject.SetActive(true);
+                shopMenu.GetComponent<ShopMenuHandler>().askForGold();
                 break;
         }
 

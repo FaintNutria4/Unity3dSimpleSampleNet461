@@ -38,12 +38,18 @@ public class EthereumAPI : MonoBehaviour
 
     }
 
-    public IEnumerator TransferItem(String newOwner, int idType, int amount)
+    public IEnumerator TransferItem(String newOwner, int idType, int amount, int gold)
     {
+        Debug.Log("Transfer Item");
+        Debug.Log("New Owner: "+ newOwner);
+        Debug.Log("IdType: "+ idType);
+        Debug.Log("amount "+ amount);
+        Debug.Log("gold "+ gold);
+
         var transactionTransferRequest = new TransactionSignedUnityRequest(netUrl, privateKey);
         transactionTransferRequest.UseLegacyAsDefault = true;
 
-        var info = new TransferItemToAddressFunction() { NewOwner = newOwner, IdType = idType, Amount = amount };
+        var info = new TransferItemToAddressFunction() { NewOwner = newOwner, IdType = idType, Amount = amount, Gold = gold};
         
         
         yield return transactionTransferRequest.SignAndSendTransaction(info, itemStorageAddress);

@@ -7,28 +7,33 @@ public class MainMenuHandler : MonoBehaviour
     private GameManager gameManager;
     public User user;
 
+    public UnityEngine.UI.InputField publicK;
+    public UnityEngine.UI.InputField privateK;
     private string publicKey;
     private string privateKey;
 
     public void Start()
     {
         gameManager = GameManager.gameManager;
+
+        setPrivateKey(privateK.text);
+        setPublicKey(publicK.text);
+
         
     }
     public void Login()
     {
-        Debug.Log("setWallet");
+        
         user.SetWallet(publicKey, privateKey);
-        Debug.Log("loadItems");
-
         user.LoadItems();
-        Debug.Log("changeState");
+       
 
-        gameManager.setState(GameManager.GameState.Playing);
+        gameManager.setState(GameManager.GameState.Playing); 
     }
 
     public void setPublicKey( string publicKey)
     {
+       
         this.publicKey = publicKey;
     }
 

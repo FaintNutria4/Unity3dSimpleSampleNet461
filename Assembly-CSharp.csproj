@@ -56,6 +56,7 @@
     <Compile Include="Assets\QuickSave\QuickSaveBase.cs" />
     <Compile Include="Assets\QuickSave\QuickSaveWriter.cs" />
     <Compile Include="Assets\Scripts\Items\Sword.cs" />
+    <Compile Include="Assets\ShopMenuHandler.cs" />
     <Compile Include="Assets\QuickSave\Core\Settings\Cryptography.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GetLatestBlockCoroutine.cs" />
     <Compile Include="Assets\Scripts\Nethereum\EtherTransferCoroutinesUnityWebRequest.cs" />
@@ -93,10 +94,12 @@
     <Compile Include="Assets\QuickSave\Core\Converters\Matrix4x4Converter.cs" />
     <Compile Include="Assets\Scripts\Nethereum\EthereumAPI.cs" />
     <Compile Include="Assets\QuickSave\Core\Settings\Compression.cs" />
+    <Compile Include="Assets\Scripts\LookAt.cs" />
+    <Compile Include="Assets\Scripts\MenuHandlers\MainMenuHandler.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GanacheTest.cs" />
+    <Compile Include="Assets\Scripts\shopGuy.cs" />
     <Compile Include="Assets\QuickSave\CompressionMode.cs" />
     <Compile Include="Assets\Scripts\Nethereum\DisableInWebGL.cs" />
-    <Compile Include="Assets\Scripts\MainMenuHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\link.xml" />

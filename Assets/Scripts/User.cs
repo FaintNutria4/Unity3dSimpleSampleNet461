@@ -31,7 +31,7 @@ public class User : MonoBehaviour
     {
        
 
-        StartCoroutine(ethereum.TransferItem("0xB8358aBD76c830611bF41ef88071dbC02e54B016", 0 , 1));
+       // StartCoroutine(ethereum.TransferItem("0xB8358aBD76c830611bF41ef88071dbC02e54B016", 0 , 1));
     }
 
     public void SetWallet(string publicKey, string privateKey)
@@ -45,26 +45,38 @@ public class User : MonoBehaviour
         StartCoroutine(DownLoadItems());
     }
 
-     IEnumerator DownLoadItems()
+     public IEnumerator DownLoadItems()
     {
         balances = null;
         StartCoroutine(ethereum.GetBalances(setBalances));
         yield return new WaitUntil(() => balances != null);
         if (balances.Count == 0 ) Debug.Log("User has no Items");
-        int o = 0;
+        int itemId = 0;
+        int inventoryPosition = 0;
+
+        Debug.Log("Downloading Items");
         foreach(BigInteger i in balances)
         {
-            if (i == 0) continue;
+
+            Debug.Log("Item Id: " + itemId + " We have " + i);
+
+            if (itemId == 0 || i == 0)
+            {
+                itemId++; continue;
+            }
+            
             item = null;
             auxItem = null;
             auxGameObject = null;
 
-            StartCoroutine(ethereum.GetItemStats(o, setAuxItem));
+            StartCoroutine(ethereum.GetItemStats(itemId, setAuxItem));
             yield return new WaitUntil(() => item != null);
             StartCoroutine(ipfs.LoadModel(item.Cid, ItemHolder, setAuxGameObjectAddItemScript));
             yield return new WaitUntil(() => auxGameObject != null);
-            inventory[o] = auxItem;
-            o++;
+            inventory[inventoryPosition] = auxItem;
+
+            inventoryPosition++;
+            itemId++;
         }
 
         if (inventory[0] != null)

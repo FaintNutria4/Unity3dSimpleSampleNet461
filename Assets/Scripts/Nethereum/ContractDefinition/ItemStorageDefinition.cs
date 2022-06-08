@@ -56,6 +56,8 @@ namespace ItemStorage.ContractDefinition
         public virtual BigInteger IdType { get; set; }
         [Parameter("uint256", "_amount", 3)]
         public virtual BigInteger Amount { get; set; }
+        [Parameter("uint256", "_gold", 4)]
+        public virtual BigInteger Gold { get; set; }
     }
 
     public partial class AddItemToAddressFunction : AddItemToAddressFunctionBase { }
