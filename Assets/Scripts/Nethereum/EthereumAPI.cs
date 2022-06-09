@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Nethereum.Hex;
 using Nethereum.Web3;
+using Nethereum.Signer;
 using Nethereum.JsonRpc.UnityClient;
 using ItemStorage.ContractDefinition;
 using System.Numerics;
@@ -57,6 +58,14 @@ public class EthereumAPI : MonoBehaviour
         var transactionTransferHash = transactionTransferRequest.Result;
         
 
+    }
+
+    public IEnumerator Login(string publicKey, string privateKey, Action trueLogin)
+    {
+        var account = new Nethereum.Web3.Accounts.Account(privateKey);
+       
+        if (publicKey == account.Address) trueLogin();
+        yield return null;
     }
 
     public IEnumerator GetItemStats(BigInteger ItemId, Action<ItemStorage.ContractDefinition.Item> callback)

@@ -23,12 +23,8 @@ public class MainMenuHandler : MonoBehaviour
     }
     public void Login()
     {
-        
-        user.SetWallet(publicKey, privateKey);
-        user.LoadItems();
-       
-
-        gameManager.setState(GameManager.GameState.Playing); 
+        StartCoroutine(user.ethereum.Login(publicKey, privateKey, TrueLogin));
+      
     }
 
     public void setPublicKey( string publicKey)
@@ -40,5 +36,14 @@ public class MainMenuHandler : MonoBehaviour
     public void setPrivateKey( string privateKey)
     {
         this.privateKey = privateKey;
+    }
+
+    public void TrueLogin()
+    {
+        user.SetWallet(publicKey, privateKey);
+        user.LoadItems();
+
+
+        gameManager.setState(GameManager.GameState.Playing);
     }
 }
