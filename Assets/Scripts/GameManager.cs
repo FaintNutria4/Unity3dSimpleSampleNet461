@@ -9,12 +9,15 @@ public class GameManager : MonoBehaviour
 
     public GameObject mainMenu;
     public GameObject shopMenu;
+    public GameObject OfferMakerMenu;
+    public GameObject OfferAnswerMenu;
+
 
     public GameObject player;
 
     
 
-    public enum GameState { MainMenu, Playing, ShopMenu };
+    public enum GameState { MainMenu, Playing, ShopMenu, OfferMakerMenu, OfferAnswerMenu };
 
     public GameState gameState;
 
@@ -47,6 +50,18 @@ public class GameManager : MonoBehaviour
                 shopMenu.SetActive(true);
                 shopMenu.transform.parent.gameObject.SetActive(true);
                 shopMenu.GetComponent<ShopMenuHandler>().askForGold();
+                break;
+            case GameState.OfferMakerMenu:
+                Time.timeScale = 0;
+                OfferMakerMenu.SetActive(true);
+                OfferMakerMenu.transform.parent.gameObject.SetActive(true);
+              //  OfferMakerMenu.GetComponent<OfferMakerMenuHandler>().askForGold();
+                break;
+            case GameState.OfferAnswerMenu:
+                Time.timeScale = 0;
+                OfferAnswerMenu.SetActive(true);
+                OfferAnswerMenu.transform.parent.gameObject.SetActive(true);
+                OfferAnswerMenu.GetComponent<ShopMenuHandler>().askForGold();
                 break;
         }
 

@@ -90,6 +90,50 @@ namespace ItemStorage.ContractDefinition
         public virtual BigInteger IdType { get; set; }
     }
 
+    public partial class GetOffersListFunction : GetOffersListFunctionBase { }
+
+    [Function("getOffersList", typeof(GetOffersListOutputDTO))]
+    public class GetOffersListFunctionBase : FunctionMessage
+    {
+
+    }
+
+    public partial class MakeOfferFunction : MakeOfferFunctionBase { }
+
+    [Function("makeOffer")]
+    public class MakeOfferFunctionBase : FunctionMessage
+    {
+        [Parameter("address", "_buyer", 1)]
+        public virtual string Buyer { get; set; }
+        [Parameter("address", "_seller", 2)]
+        public virtual string Seller { get; set; }
+        [Parameter("uint256", "_itemId", 3)]
+        public virtual BigInteger ItemId { get; set; }
+        [Parameter("uint256", "_amount", 4)]
+        public virtual BigInteger Amount { get; set; }
+        [Parameter("uint256", "_gold", 5)]
+        public virtual BigInteger Gold { get; set; }
+    }
+
+    public partial class AnswerOfferExternalFunction : AnswerOfferExternalFunctionBase { }
+
+    [Function("answerOfferExternal")]
+    public class AnswerOfferExternalFunctionBase : FunctionMessage
+    {
+        [Parameter("uint256", "index", 1)]
+        public virtual BigInteger Index { get; set; }
+        [Parameter("bool", "answer", 2)]
+        public virtual bool Answer { get; set; }
+    }
+
+    public partial class GetItemsNumberFunction : GetItemsNumberFunctionBase { }
+
+    [Function("getItemsNumber", "uint256")]
+    public class GetItemsNumberFunctionBase : FunctionMessage
+    {
+
+    }
+
     public partial class CreateItemOutputDTO : CreateItemOutputDTOBase { }
 
     [FunctionOutput]
@@ -119,5 +163,27 @@ namespace ItemStorage.ContractDefinition
     {
         [Parameter("tuple", "", 1)]
         public virtual Item ReturnValue1 { get; set; }
+    }
+
+    public partial class GetOffersListOutputDTO : GetOffersListOutputDTOBase { }
+
+    [FunctionOutput]
+    public class GetOffersListOutputDTOBase : IFunctionOutputDTO 
+    {
+        [Parameter("tuple[]", "", 1)]
+        public virtual List<Offer> ReturnValue1 { get; set; }
+    }
+
+
+
+
+
+    public partial class GetItemsNumberOutputDTO : GetItemsNumberOutputDTOBase { }
+
+    [FunctionOutput]
+    public class GetItemsNumberOutputDTOBase : IFunctionOutputDTO 
+    {
+        [Parameter("uint256", "", 1)]
+        public virtual BigInteger ReturnValue1 { get; set; }
     }
 }

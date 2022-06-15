@@ -41,11 +41,6 @@ public class EthereumAPI : MonoBehaviour
 
     public IEnumerator TransferItem(String newOwner, int idType, int amount, int gold)
     {
-        Debug.Log("Transfer Item");
-        Debug.Log("New Owner: "+ newOwner);
-        Debug.Log("IdType: "+ idType);
-        Debug.Log("amount "+ amount);
-        Debug.Log("gold "+ gold);
 
         var transactionTransferRequest = new TransactionSignedUnityRequest(netUrl, privateKey);
         transactionTransferRequest.UseLegacyAsDefault = true;
@@ -74,7 +69,8 @@ public class EthereumAPI : MonoBehaviour
         yield return queryRequest.Query(new GetItemStatsFunction() { IdType = ItemId }, itemStorageAddress);
         
         var result = queryRequest.Result;
-        ItemStorage.ContractDefinition.Item item = result.ReturnValue1;
+        ItemStorage.ContractDefinition.Item item = null;
+        if(result != null) item =  result.ReturnValue1;
 
         callback(item);
 
