@@ -53,65 +53,39 @@
     <UnityVersion>2020.3.17f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Include="Assets\QuickSave\QuickSaveBase.cs" />
-    <Compile Include="Assets\QuickSave\QuickSaveWriter.cs" />
     <Compile Include="Assets\Scripts\Items\Sword.cs" />
     <Compile Include="Assets\Scripts\MenuHandlers\ShopMenuHandler.cs" />
-    <Compile Include="Assets\QuickSave\Core\Settings\Cryptography.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GetLatestBlockCoroutine.cs" />
     <Compile Include="Assets\Scripts\Nethereum\EtherTransferCoroutinesUnityWebRequest.cs" />
     <Compile Include="Assets\Scripts\Nethereum\TokenDeployAndSendCoroutinesUnityWebRequest.cs" />
-    <Compile Include="Assets\QuickSave\Core\Converters\SpriteConverter.cs" />
-    <Compile Include="Assets\QuickSave\SecurityMode.cs" />
-    <Compile Include="Assets\QuickSave\Core\Converters\Vector2Converter.cs" />
     <Compile Include="Assets\Scripts\IPFS\PlayerIpfsAPI.cs" />
-    <Compile Include="Assets\QuickSave\QuickSaveRaw.cs" />
     <Compile Include="Assets\Scripts\Nethereum\ContractDefinition\ItemStorageDefinition.cs" />
     <Compile Include="Assets\Scripts\Shops\OfferMakerGuy.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\ICanTakeDmg.cs" />
-    <Compile Include="Assets\QuickSave\QuickSaveGlobalSettings.cs" />
-    <Compile Include="Assets\QuickSave\QuickSaveException.cs" />
-    <Compile Include="Assets\QuickSave\Core\Converters\QuaternionConverter.cs" />
     <Compile Include="Assets\Scripts\Shops\OfferAnswerGuy.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GetLatestBlockVanillaNethereum.cs" />
     <Compile Include="Assets\Scripts\IPFS\NFTStorageImplementation.cs" />
-    <Compile Include="Assets\QuickSave\Core\Storage\FileAccess.cs" />
     <Compile Include="Assets\Scripts\Items\Item.cs" />
-    <Compile Include="Assets\QuickSave\Core\Converters\Vector4Converter.cs" />
     <Compile Include="Assets\Scripts\MenuHandlers\OfferMakerMenuHandler.cs" />
     <Compile Include="Assets\Scripts\Nethereum\ContractDefinition\Item.cs" />
-    <Compile Include="Assets\QuickSave\QuickSaveSettings.cs" />
-    <Compile Include="Assets\QuickSave\QuickSaveReader.cs" />
     <Compile Include="Assets\Scripts\PlayerController.cs" />
-    <Compile Include="Assets\QuickSave\Core\Converters\Texture2DConverter.cs" />
     <Compile Include="Assets\Scripts\IPFS\NFTStorageClient.cs" />
-    <Compile Include="Assets\QuickSave\Example\ExampleSceneManagerController.cs" />
     <Compile Include="Assets\Scripts\GameManager.cs" />
-    <Compile Include="Assets\QuickSave\Core\Converters\ColorConverter.cs" />
     <Compile Include="Assets\Scripts\User.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\PlayerHealthSystem.cs" />
-    <Compile Include="Assets\QuickSave\Core\Serialisers\JsonSerialiser.cs" />
     <Compile Include="Assets\Scripts\Nethereum\ChangeTextInWebGL.cs" />
-    <Compile Include="Assets\QuickSave\Core\Converters\Vector3Converter.cs" />
     <Compile Include="Assets\Scripts\HealthSystem\EnemyHealthSystem.cs" />
-    <Compile Include="Assets\QuickSave\Core\Converters\Matrix4x4Converter.cs" />
     <Compile Include="Assets\Scripts\Nethereum\EthereumAPI.cs" />
-    <Compile Include="Assets\QuickSave\Core\Settings\Compression.cs" />
     <Compile Include="Assets\Scripts\Shops\LookAt.cs" />
     <Compile Include="Assets\Scripts\MenuHandlers\MainMenuHandler.cs" />
     <Compile Include="Assets\Scripts\Nethereum\GanacheTest.cs" />
     <Compile Include="Assets\Scripts\Shops\shopGuy.cs" />
     <Compile Include="Assets\Scripts\Nethereum\ContractDefinition\Offer.cs" />
-    <Compile Include="Assets\QuickSave\CompressionMode.cs" />
     <Compile Include="Assets\Scripts\Nethereum\DisableInWebGL.cs" />
     <Compile Include="Assets\Scripts\MenuHandlers\OfferAnswerMenuHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\link.xml" />
-    <None Include="Assets\QuickSave\Plugins\jillejr.newtonsoft.json-for-unity@12.0.301\Plugins\Newtonsoft.Json Portable\Newtonsoft.Json.xml" />
-    <None Include="Assets\QuickSave\Plugins\jillejr.newtonsoft.json-for-unity@12.0.301\Plugins\Newtonsoft.Json AOT\Newtonsoft.Json.xml" />
-    <None Include="Assets\QuickSave\Plugins\jillejr.newtonsoft.json-for-unity@12.0.301\Plugins\Newtonsoft.Json Editor\Newtonsoft.Json.xml" />
-    <None Include="Assets\QuickSave\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

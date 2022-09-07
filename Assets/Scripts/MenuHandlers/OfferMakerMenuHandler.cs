@@ -9,10 +9,12 @@ using UnityEngine.UI;
 public class OfferMakerMenuHandler : MonoBehaviour
 {
     private string seller;
+    private string buyer;
     private int itemId;
     private int amount;
     private int gold;
 
+    public Text sellerInput;
     public Dropdown dropdown;
     public Text goldText;
     public User user;
@@ -21,7 +23,7 @@ public class OfferMakerMenuHandler : MonoBehaviour
 
     private void OnEnable()
     {
-        setDropDownItems();
+        StartCoroutine(setDropDownItems());
         askForGold();
     }
 
@@ -51,7 +53,8 @@ public class OfferMakerMenuHandler : MonoBehaviour
 
         //Getting the dto response already decoded
         var dtoResult = queryRequest.Result;
-        auxInt = (int)dtoResult.ReturnValue1;
+        Debug.Log(dtoResult);
+        auxInt =(int)(dtoResult.ReturnValue1);
         yield return null;
     }
 
